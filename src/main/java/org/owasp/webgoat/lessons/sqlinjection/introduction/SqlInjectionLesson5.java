@@ -95,8 +95,7 @@ public class SqlInjectionLesson5 extends AssignmentEndpoint {
     try {
       var stmt =
           connection.prepareStatement(
-              "SELECT * FROM INFORMATION_SCHEMA.TABLE_PRIVILEGES WHERE TABLE_NAME = ? AND GRANTEE ="
-                  + " ?");
+              "SELECT * FROM INFORMATION_SCHEMA.TABLE_PRIVILEGES WHERE TABLE_NAME = ? AND GRANTEE = ?");
       stmt.setString(1, "GRANT_RIGHTS");
       stmt.setString(2, "UNAUTHORIZED_USER");
       var resultSet = stmt.executeQuery();
