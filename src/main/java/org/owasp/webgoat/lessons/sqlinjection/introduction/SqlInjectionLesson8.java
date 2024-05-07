@@ -154,7 +154,7 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
         "INSERT INTO access_log (time, action) VALUES ('" + time + "', '" + action + "')";
 
     try {
-      Statement statement = connection.createStatement(TYPE_SCROLL_SENSITIVE, CONCUR_UPDATABLE);
+      PreparedStatement preparedStatement = connection.prepareStatement(logQuery);\n      preparedStatement.executeUpdate();
       statement.executeUpdate(logQuery);
     } catch (SQLException e) {
       System.err.println(e.getMessage());
