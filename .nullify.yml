@@ -1,0 +1,7 @@
+code:
+  auto_fix:
+    enabled: true
+    max_pull_requests_open: 10
+    max_pull_request_creation_rate:
+      count: 10
+      days: 1
