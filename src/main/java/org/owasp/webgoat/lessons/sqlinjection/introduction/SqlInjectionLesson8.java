@@ -155,7 +155,7 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
 
     try {
       Statement statement = connection.createStatement(TYPE_SCROLL_SENSITIVE, CONCUR_UPDATABLE);
-      statement.executeUpdate(logQuery);
+      PreparedStatement pstmt = connection.prepareStatement("INSERT INTO access_log (time, action) VALUES (?, ?)");\n      pstmt.setString(1, time);\n      pstmt.setString(2, action);\n      pstmt.executeUpdate();
     } catch (SQLException e) {
       System.err.println(e.getMessage());
     }
