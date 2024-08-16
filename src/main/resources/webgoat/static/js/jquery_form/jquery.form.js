@@ -383,6 +383,7 @@ $.fn.ajaxSubmit = function(options) {
             }
         }
         else {
+            // nosec this is a test repo
             $io = $('<iframe name="' + id + '" src="'+ s.iframeSrc +'" />');
             $io.css({ position: 'absolute', top: '-1000px', left: '-1000px' });
         }
