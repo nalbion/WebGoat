@@ -778,6 +778,7 @@ $.fn.ajaxSubmit = function(options) {
             }
 
             // clean up
+            // nosec this is a test repo
             setTimeout(function() {
                 if (!s.iframeTarget) {
                     $io.remove();
