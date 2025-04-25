@@ -155,7 +155,7 @@ public class SqlInjectionLesson8 extends AssignmentEndpoint {
 
     try {
       Statement statement = connection.createStatement(TYPE_SCROLL_SENSITIVE, CONCUR_UPDATABLE);
-      statement.executeUpdate(logQuery);
+      PreparedStatement preparedStatement = connection.prepareStatement(logQuery);\n      preparedStatement.executeUpdate();
     } catch (SQLException e) {
       System.err.println(e.getMessage());
     }
